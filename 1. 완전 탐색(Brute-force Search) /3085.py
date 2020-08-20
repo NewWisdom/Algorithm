@@ -31,7 +31,7 @@ input = lambda : sys.stdin.readline().strip()
 n = int(input())
 arr = [list(input()) for i in range(n)]
 max_cnt= 0
-
+ 
 def row():    
     global max_cnt
     for i in range(n):
