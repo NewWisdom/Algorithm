@@ -24,7 +24,7 @@ CCPPP
 YCYZC
 CPPZZ
 예제 출력 1 
-4
+4 
 """
 import sys
 input = lambda : sys.stdin.readline().strip()
