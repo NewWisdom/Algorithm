@@ -23,7 +23,11 @@ from itertools import combinations
 * 중복 있는 순열 / 각 집단에서 추출
 ```
 from itertools import product
+product(iterables, repeat)
 ```
+product 는 첫 인자로 여러 리스트를 받을 수 있다.
+repeat만큼 첫 번째 인자를 반복해서 뽑아라.
+
 * 중복 있는 조합
 ```
 from itertools import combinations_with_replacement as com
