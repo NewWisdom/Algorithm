@@ -64,34 +64,34 @@ cnt +=1 하고 chk[i][j] =1 체크해준다.
 그리고 상하좌우에사 chk[i][j] ==0 이면 큐에 넣어서 탐색.
 
 """
-import queue
+import sys
+from collections import deque
+input = lambda:sys.stdin.readline().strip()
 
 def bfs(start):
-    q.put(start)
-    dx = [-1, 0, 0, 1]
-    dy = [0, -1, 1, 0]
-    while not q.empty():
-        x, y = q.get()
-        for i in range(4):
+    q = deque()
+    q.append(start)
+    dx = [-1,-1,-1,0,0,1,1,1]
+    dy = [-1,0,1,-1,1,-1,0,1]
+    while q:
+        x, y = q.popleft()
+        for i in range(8):
             nx = x+dx[i]
             ny = y+dy[i]
-            if 0 <= nx < h and 0 <= ny <w and chk[nx][ny] ==0 and map1[nx][ny] ==1: # 섬이면서 방문하지 않은 곳이면
-                q.put([nx,ny])
-                chk[nx][ny] ==1
-
-    
+            if 0 <= nx < h and 0 <= ny <w and map1[nx][ny] ==1: # 섬이면서 방문하지 않은 곳이면
+                    map1[nx][ny] = 0
+                    q.append([nx,ny])
+                    
 
 while True:
     w,h = map(int,input().split())
     cnt = 0
     if w == 0 and h == 0: break
     map1 = [list(map(int,input().split())) for _ in range(h)]
-    chk = [[0]*w for _ in range(h)]
-    q = queue.Queue()
+    
     for i in range(h): # map1을 순회하면서
         for j in range(w):
-            if map1[i][j] == 1 and chk[i][j] == 0: # 섬인데 방문하지 않은 곳이면
-                chk[i][j] =1
+            if map1[i][j] : # 섬인데 방문하지 않은 곳이면
                 bfs([i,j])
                 cnt +=1
     print(cnt)
