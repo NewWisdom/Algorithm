@@ -38,14 +38,14 @@ n가지 종류의 동전이 있다. 이 동전들을 적당히 사용해서, 그
 #         else:
 #             dp[i] = -1
 # if dp[k] == 0 : dp[k] = -1
-
+#
 # print(dp[k])
-
+ #
 n,k = map(int,input().split())
 dp = [0 for _ in range(k+1)]
 c = [int(input()) for _ in range(n)]
 
-for i in range(1,k+1): # k까지
+for i in range(1,k+1): # k까지 검사
     a=[]
     for j in c: # 동전 하나하나
         if j<=i and dp[i-j]!=-1: # 동전 가치가 만들 수 있는 수보다 작거나 같고, 이 동전을 넣기 전 가치가 만들 수 없는 경우가 아니라면
