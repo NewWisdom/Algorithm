@@ -27,7 +27,7 @@ def solution(s):
                     total[i] += s[j:len(s)]
             if not isExist :
                 total[i] = s
-        answer = len(total[1]) s
+        answer = len(total[1])
         if len(total) == 1: pass
         else:
             for i in range(2,len(total)):
