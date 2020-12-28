@@ -72,6 +72,7 @@ def solution(tickets):
         t[k].sort(reverse=True)
     st = ["ICN"]
     answer = []
+    print(t)
     while st:
         top = st[-1]
         print(st)
