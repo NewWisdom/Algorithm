@@ -32,7 +32,7 @@ def solution(n, costs):
         for i, cost in enumerate(costs):
             if cost[0] in routes and cost[1] in routes:
                 continue
-            if cost[0] in routes or cost[1] in routes:
+            if cost[0] in routes or cost[1] in routes: # 둘 중 하나만 있을 경우
                 routes.update([cost[0], cost[1]])
                 answer += cost[2]
                 costs[i] = [-1, -1, -1]
